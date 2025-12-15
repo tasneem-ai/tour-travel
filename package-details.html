@@ -3,128 +3,298 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Package Details</title>
+<title>Package Details | TravelIndia</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css"> <!-- Main page CSS -->
+
 <style>
-/* Page-specific styles using main page design */
-.container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-.banner { position: relative; height: 350px; background-size: cover; background-position: center; border-radius: 10px; overflow: hidden; }
-.banner::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
-.banner-title { position: absolute; bottom:20px; left:20px; color:#fff; font-size:36px; font-weight:700; z-index:1; }
-.info { display:flex; flex-wrap:wrap; justify-content:space-between; margin-top:20px; gap:20px; }
-.info div { flex:1 1 45%; background:#fff; padding:15px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); text-align:center; }
-.info div h3 { color:#0078ff; margin-bottom:10px; font-size:18px; }
-.info div p { font-size:16px; color:#555; margin:0; }
-.description, .highlights, .itinerary, .gallery { margin-top:30px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-.description h2, .highlights h2, .itinerary h2, .gallery h2 { color:#0078ff; margin-bottom:15px; }
-.highlights ul { list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:15px; }
-.highlights ul li { flex:1 1 45%; background:#f0f8ff; padding:10px 15px; border-radius:8px; font-size:16px; color:#333; }
-.itinerary ul { padding-left:20px; }
-.itinerary ul li { margin-bottom:10px; color:#555; }
-.gallery { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
-.gallery img { width:48%; height:200px; object-fit:cover; border-radius:10px; cursor:pointer; transition: transform 0.3s; }
-.gallery img:hover { transform: scale(1.05); }
-/* Popup/lightbox */
-#imagePopup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); justify-content:center; align-items:center; z-index:500; }
-#imagePopup img { max-width:90%; max-height:80%; border-radius:10px; box-shadow:0 2px 15px rgba(0,0,0,0.5); }
-#imagePopup span { position:absolute; top:20px; right:30px; font-size:30px; color:#fff; cursor:pointer; font-weight:bold; }
-.btns { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:20px; }
-.btn { padding:10px 20px; border:none; border-radius:5px; text-decoration:none; text-align:center; font-weight:600; cursor:pointer; color:#fff; background:#0078ff; }
-.btn-back { background:#ff5722; }
-header .container { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:10px 0; }
-header .logo { margin:0; font-weight:700; }
-header nav { flex:1; text-align:center; }
-header nav a { margin:0 15px; text-decoration:none; color:#0078ff; font-weight:500; }
-@media(max-width:768px){ .info div { flex:1 1 100%; } .gallery img { width:100%; } .banner-title { font-size:28px; } header nav { margin-top:10px; } }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background:#f4f6f8;
+    color:#333;
+}
+
+/* ===== Header ===== */
+header{
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.header{
+    max-width:1100px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:#0078ff;
+}
+.back-btn{
+    background:#ff5722;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* ===== Banner ===== */
+.banner{
+    height:380px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+.banner::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+.banner-content{
+    position:absolute;
+    bottom:30px;
+    left:30px;
+    color:#fff;
+    z-index:2;
+}
+.banner-content h1{
+    font-size:40px;
+}
+.rating{
+    margin-top:10px;
+    font-size:18px;
+}
+.rating span{
+    color:#ffd700;
+}
+
+/* ===== Container ===== */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+}
+
+/* ===== Info Cards ===== */
+.info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+.info-card{
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+.info-card h3{
+    color:#0078ff;
+    margin-bottom:8px;
+}
+
+/* ===== Section Box ===== */
+.box{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    margin-top:30px;
+}
+.box h2{
+    color:#0078ff;
+    margin-bottom:15px;
+}
+
+/* ===== Highlights ===== */
+.highlights ul{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+    list-style:none;
+}
+.highlights li{
+    background:#f0f8ff;
+    padding:12px;
+    border-radius:8px;
+}
+
+/* ===== Itinerary ===== */
+.itinerary ul{
+    padding-left:20px;
+}
+.itinerary li{
+    margin-bottom:10px;
+}
+
+/* ===== Gallery ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+.gallery img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== Buttons ===== */
+.actions{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
+}
+.btn{
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+}
+.btn-primary{ background:#0078ff; }
+.btn-secondary{ background:#ff5722; }
+
+/* ===== Popup ===== */
+#popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+#popup img{
+    max-width:90%;
+    max-height:80%;
+    border-radius:10px;
+}
+#popup span{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+    .banner-content h1{ font-size:30px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="container header-container">
-    <h2 class="logo">Travel<span>India</span></h2>
-    <a href="index.html" class="btn btn-back">Back to Home</a>
-  </div>
+    <div class="header">
+        <div class="logo">TravelIndia</div>
+        <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
 </header>
 
-<div class="container">
-    <div class="banner" id="banner">
-        <div class="banner-title" id="bannerTitle"></div>
+<div class="banner" id="banner">
+    <div class="banner-content">
+        <h1 id="title"></h1>
+        <div class="rating">⭐⭐⭐⭐⭐ <span>(4.8/5)</span></div>
     </div>
+</div>
 
+<div class="container">
+
+    <!-- Info -->
     <div class="info">
-        <div>
+        <div class="info-card">
             <h3>Duration</h3>
             <p id="duration"></p>
         </div>
-        <div>
+        <div class="info-card">
             <h3>Price</h3>
             <p id="price"></p>
         </div>
-        <div>
+        <div class="info-card">
             <h3>Group Size</h3>
             <p id="group"></p>
         </div>
-        <div>
+        <div class="info-card">
             <h3>Transport</h3>
             <p id="transport"></p>
         </div>
     </div>
 
-    <div class="description">
+    <!-- Description -->
+    <div class="box">
         <h2>Description</h2>
         <p id="description"></p>
     </div>
 
-    <div class="highlights">
+    <!-- Highlights -->
+    <div class="box highlights">
         <h2>Highlights</h2>
         <ul id="highlights"></ul>
     </div>
 
-    <div class="itinerary">
+    <!-- Itinerary -->
+    <div class="box itinerary" id="itinerarySection">
         <h2>Itinerary</h2>
         <ul id="itinerary"></ul>
     </div>
 
-    <div class="gallery" id="gallery"></div>
+    <!-- Gallery -->
+    <div class="box">
+        <h2>Gallery</h2>
+        <div class="gallery" id="gallery"></div>
+    </div>
 
-    <div class="btns">
-        <a href="index.html" class="btn btn-back">Back</a>
-        <a href="#" class="btn">Book Now</a>
+    <!-- Buttons -->
+    <div class="actions">
+        <a href="#itinerarySection" class="btn btn-secondary">View Details</a>
+        <a href="#" class="btn btn-primary">Book Now</a>
     </div>
 </div>
 
-<!-- Popup for gallery -->
-<div id="imagePopup">
-    <span id="closePopup">&times;</span>
-    <img id="popupImage" src="" alt="Gallery Image">
+<!-- Image Popup -->
+<div id="popup">
+    <span onclick="closePopup()">&times;</span>
+    <img id="popupImg">
 </div>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const pkg = params.get('package');
-
-const details = {
-    goa: {
-        title: "Goa Beach Getaway",
-        banner: "https://mapupa.com/wp-content/uploads/2025/04/Goa-Beach-Getaways.webp",
-        duration: "3 Nights / 4 Days",
-        price: "₹12,999 per person",
-        group: "Up to 10 people",
-        transport: "AC Coach",
-        description: "Explore the beautiful beaches of Goa, enjoy water sports, nightlife, and local cuisine.",
-        highlights: ["Beach hopping", "Water sports", "Nightlife & clubs", "Local cuisine"],
-        itinerary: [
-            "Day 1: Arrival in Goa, check-in at hotel",
-            "Day 2: Beach activities & sightseeing",
-            "Day 3: Explore local markets and relax at the beach",
-            "Day 4: Departure"
-        ],
-        gallery: [
+const data = {
+    goa:{
+        title:"Goa Beach Getaway",
+        banner:"https://mapupa.com/wp-content/uploads/2025/04/Goa-Beach-Getaways.webp",
+        duration:"3 Nights / 4 Days",
+        price:"₹12,999 per person",
+        group:"Up to 10 People",
+        transport:"AC Coach",
+        description:"Enjoy beaches, nightlife and water sports in Goa.",
+        highlights:["Beach hopping","Water sports","Nightlife","Local cuisine"],
+        itinerary:["Day 1: Arrival","Day 2: Beach tour","Day 3: Leisure","Day 4: Departure"],
+        gallery:[
             "https://mapupa.com/wp-content/uploads/2025/04/Goa-Beach-Getaways.webp",
-            "https://via.placeholder.com/450x300?text=Goa+2",
-            "https://via.placeholder.com/450x300?text=Goa+3"
+            "https://via.placeholder.com/400x300",
+            "https://via.placeholder.com/400x300"
         ]
     },
     kashmir: {
@@ -197,50 +367,44 @@ const details = {
     }
 };
 
-// Populate page dynamically
-if(pkg && details[pkg]){
-    const data = details[pkg];
-    document.getElementById('banner').style.backgroundImage = `url(${data.banner})`;
-    document.getElementById('bannerTitle').innerText = data.title;
-    document.getElementById('duration').innerText = data.duration;
-    document.getElementById('price').innerText = data.price;
-    document.getElementById('group').innerText = data.group;
-    document.getElementById('transport').innerText = data.transport;
-    document.getElementById('description').innerText = data.description;
+const params=new URLSearchParams(location.search);
+const pkg=params.get("package") || "goa";
+const d=data[pkg];
 
-    const highlightsList = document.getElementById('highlights');
-    data.highlights.forEach(item=>{
-        const li = document.createElement('li');
-        li.innerText = item;
-        highlightsList.appendChild(li);
-    });
+document.getElementById("banner").style.backgroundImage=`url(${d.banner})`;
+document.getElementById("title").innerText=d.title;
+document.getElementById("duration").innerText=d.duration;
+document.getElementById("price").innerText=d.price;
+document.getElementById("group").innerText=d.group;
+document.getElementById("transport").innerText=d.transport;
+document.getElementById("description").innerText=d.description;
 
-    const itineraryList = document.getElementById('itinerary');
-    data.itinerary.forEach(day=>{
-        const li = document.createElement('li');
-        li.innerText = day;
-        itineraryList.appendChild(li);
-    });
-
-    const galleryDiv = document.getElementById('gallery');
-    data.gallery.forEach(img=>{
-        const image = document.createElement('img');
-        image.src = img;
-        image.addEventListener('click', ()=>{
-            document.getElementById('popupImage').src = img;
-            document.getElementById('imagePopup').style.display = 'flex';
-        });
-        galleryDiv.appendChild(image);
-    });
-
-} else {
-    document.getElementById('bannerTitle').innerText = "Package Not Found";
-}
-
-// Close popup
-document.getElementById('closePopup').addEventListener('click', ()=>{
-    document.getElementById('imagePopup').style.display = 'none';
+d.highlights.forEach(h=>{
+    const li=document.createElement("li");
+    li.innerText=h;
+    highlights.appendChild(li);
 });
+
+d.itinerary.forEach(i=>{
+    const li=document.createElement("li");
+    li.innerText=i;
+    itinerary.appendChild(li);
+});
+
+d.gallery.forEach(img=>{
+    const image=document.createElement("img");
+    image.src=img;
+    image.onclick=()=>openPopup(img);
+    gallery.appendChild(image);
+});
+
+function openPopup(img){
+    popup.style.display="flex";
+    popupImg.src=img;
+}
+function closePopup(){
+    popup.style.display="none";
+}
 </script>
 
 </body>
