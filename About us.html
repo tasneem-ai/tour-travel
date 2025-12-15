@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - TravelIndia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f6f5f7;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 15px 0;
+    }
+
+    header .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      z-index: 1;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 32px;
+      color: #0078ff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .team-member {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .team-member h3 {
+      margin: 10px 0 5px;
+      color: #0078ff;
+    }
+
+    .team-member p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .cta {
+      background: #0078ff;
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin: 60px auto;
+      max-width: 1000px;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .cta button {
+      background: #ff5722;
+      color: #fff;
+      padding: 12px 35px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+
+    .cta button:hover {
+      background: #e64b1f;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #333;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    @media(max-width:768px) {
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .section h2 {
+        font-size: 28px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h2 class="logo">Travel<span>India</span></h2>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#team">Team</a>
+        <a href="#cta">Book Now</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>About TravelIndia</h1>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2>Who We Are</h2>
+    <p>
+      TravelIndia is your ultimate travel companion, offering curated experiences across India. 
+      From serene backwaters in Kerala to the majestic forts of Rajasthan, we provide tailor-made travel packages for every traveler.
+      Our mission is to make your journey unforgettable with comfort, safety, and the best local experiences.
+    </p>
+  </section>
+
+  <!-- Team Section -->
+  <section class="section" id="team">
+    <h2>Meet Our Team</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="CEO">
+        <h3>Tasneem Fatima</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Travel Expert">
+        <h3>Aarav Singh</h3>
+        <p>Travel Expert</p>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/150" alt="Customer Support">
+        <h3>Riya Sharma</h3>
+        <p>Customer Support</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="cta">
+    <h2>Plan Your Next Adventure With Us</h2>
+    <button onclick="window.location.href='packages.html'">Book Your Trip</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 TravelIndia. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
