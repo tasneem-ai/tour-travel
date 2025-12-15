@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  background:#f4f6f9;
+  font-family:Poppins,sans-serif;
+}
+.container{
+  max-width:400px;
+  background:#fff;
+  margin:100px auto;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+button{
+  width:100%;
+  padding:12px;
+  background:#ff5722;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+if(localStorage.getItem("isLoggedIn")!=="true"){
+  window.location.href="login.html";
+}
+</script>
+
+<div class="container">
+  <h2>Payment</h2>
+  <p>This is a mock payment screen.</p>
+  <button onclick="confirmPayment()">Pay Now</button>
+</div>
+
+<script>
+function confirmPayment(){
+  let booking = JSON.parse(localStorage.getItem("bookingData"));
+  let users = JSON.parse(localStorage.getItem("users"));
+  let currentUser = localStorage.getItem("currentUser");
+
+  let user = users.find(u=>u.email===currentUser);
+  user.bookings.push(booking);
+
+  localStorage.setItem("users",JSON.stringify(users));
+  localStorage.removeItem("bookingData");
+
+  alert("Payment Successful!");
+  window.location.href="dashboard.html";
+}
+</script>
+
+</body>
+</html>
